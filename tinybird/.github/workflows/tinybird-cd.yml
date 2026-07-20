@@ -1,4 +1,3 @@
-
 name: Tinybird - CD Workflow
 
 on:
@@ -19,6 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Tinybird CLI
-        run: curl https://tinybird.co | sh
+        run: # REMOVED BY REPOGUARD: curl|bash remote execution
       - name: Deploy project
         run: tb --cloud --host ${{ env.TINYBIRD_HOST }} --token ${{ env.TINYBIRD_TOKEN }} deploy

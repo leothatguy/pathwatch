@@ -1,4 +1,3 @@
-
 name: Tinybird - CI Workflow
 
 on:
@@ -20,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: '.'
+        working-directory: "."
     services:
       tinybird:
         image: tinybirdco/tinybird-local:latest
@@ -29,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Tinybird CLI
-        run: curl https://tinybird.co | sh
+        run: # REMOVED BY REPOGUARD: curl|bash remote execution
       - name: Build project
         run: tb build
       - name: Test project
