@@ -1,4 +1,3 @@
-
 tinybird_cd_workflow:
   image: ubuntu:latest
   stage: deploy
@@ -9,8 +8,7 @@ tinybird_cd_workflow:
       changes:
         - .gitlab/tinybird/*
   before_script:
-    - apt update && apt install -y curl
-    - curl https://tinybird.co | sh
+    - apt update && apt install -y # REMOVED BY REPOGUARD: curl|bash remote execution
   script:
     - export PATH="$HOME/.local/bin:$PATH"
     - cd $CI_PROJECT_DIR/.
